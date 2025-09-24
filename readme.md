@@ -1,6 +1,9 @@
-# 🎬 Sistema de Reserva de Cinema
+# 🎬 Sistema de Gerenciamento de Tempo/Tarefas
 
-**Descrição:** Projeto para gerenciar reservas de [salão/restaurante/clínica].
+**Descrição:** Projeto para gerenciar tarefas e proporcionar facilidade ao realizar quaisquer atividades
+
+
+[salão/restaurante/clínica].
 
 ---
 
@@ -37,4 +40,4 @@ npm start
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
