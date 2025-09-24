@@ -13,7 +13,7 @@
 
 ## 🚀 Como Rodar o Projeto
 
-### Frontend
+### FrontendJ
 ```bash
 cd frontend
 npm install
