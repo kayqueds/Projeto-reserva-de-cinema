@@ -1,94 +1,90 @@
-import "./Cadastro.css";
-import { useState } from "react";
-import {Link} from 'react-router-dom'
+import { useState, useEffect } from "react";
+import "./cadastro.css";
 
 function Cadastro() {
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [dataNascimento, setDataNascimento] = useState("");
+  // Lista de imagens (pode trocar pelas suas)
+  const imagens = [
+    "https://blogprodutivamente.files.wordpress.com/2022/07/post-como-fazer-lista-de-tarefas-2.jpg?w=1024",
+    "https://isoflex.com.br/wp-content/uploads/2022/12/matriz-de-gerenciamento-do-tempo.jpg",
+    "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/2ee12c73344287.5c06973b51d22.jpg",
+  ];
 
-  const cadastrarUsuario = (e) => {
-    e.preventDefault();
-    if (!nome.trim() || !email.trim() || !senha.trim() || !dataNascimento.trim()) {
-      alert("Por favor, preencha todos os campos.");
-      return;
-    } else {
-      console.log("Cadadastrando...");
-      setTimeout(() => {
-        alert(`Usuário cadastrado com sucesso!`);
-        console.log(`Usuário cadastrado com sucesso!, Bem-vindo(a) ${nome}`);
-        setNome("");
-        setEmail("");
-        setSenha("");
-        setDataNascimento("");
-      }, 1000);
-    }
-  };
+  const [index, setIndex] = useState(0);
+
+  // Troca de imagem automática
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setIndex((prev) => (prev + 1) % imagens.length);
+    }, 4000); // troca a cada 4s
+    return () => clearInterval(intervalo);
+  }, [imagens.length]);
 
   return (
-    <>
-      <h2>Crie a sua conta para começar</h2>
-      <form onSubmit={cadastrarUsuario}>
-        <div>
-          <label htmlFor="nome">Informe seu nome:</label>
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            required
-            placeholder="Nome"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-          />
+    <div className="cadastro-page">
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div className="container">
+          <a className="navbar-brand fw-bold" href="#">TaskBoost</a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item"><a className="nav-link" href="#">Início</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">Sobre</a></li>
+              <li className="nav-item"><a className="nav-link active" href="#">Cadastro</a></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <label htmlFor="email">Informe seu email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+      </nav>
+
+      {/* Conteúdo */}
+      <main>
+        <div className="cadastro-container">
+          {/* Lado esquerdo */}
+          <div className="cadastro-left">
+            <h2>Crie sua conta</h2>
+            <form>
+              <input type="text" className="form-control" placeholder="Nome completo" required />
+              <input type="email" className="form-control" placeholder="Email" required />
+              <input type="password" className="form-control" placeholder="Senha" required />
+
+              <div className="form-check mb-3">
+                <input type="checkbox" className="form-check-input" id="termos" required />
+                <label className="form-check-label" htmlFor="termos">
+                  Aceito os termos de uso
+                </label>
+              </div>
+
+              <button type="submit" className="btn-cadastrar">
+                Cadastrar
+              </button>
+            </form>
+
+            <a href="/login" className="login-link">
+              Já tem conta? Faça login
+            </a>
+          </div>
+
+          {/* Lado direito com imagens dinâmicas */}
+          <div className="cadastro-right">
+            {imagens.map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                alt={`Ilustração cadastro ${i}`}
+                className={i === index ? "active" : ""}
+              />
+            ))}
+          </div>
         </div>
-        <div>
-          <label htmlFor="senha">Informe sua senha:</label>
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            required
-            placeholder="Senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="dataNascimento">
-            Informe sua data de nascimento:
-          </label>
-          <input
-            type="date"
-            id="dataNascimento"
-            name="dataNascimento"
-            required
-            value={dataNascimento}
-            onChange={(e) => setDataNascimento(e.target.value)}
-          />
-        </div>
-        <div>
-          <input type="checkbox" id="termos" name="termos" required />
-          <label htmlFor="termos">
-            Aceito os termos e condições e as políticas de privacidade
-          </label>
-        </div>
-        <button type="submit">Cadastrar</button>
-        <Link to="/login">Já tenho uma conta</Link>
-      </form>
-    </>
+      </main>
+    </div>
   );
 }
 
