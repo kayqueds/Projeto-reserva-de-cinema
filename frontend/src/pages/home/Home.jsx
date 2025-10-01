@@ -48,16 +48,7 @@ function Home() {
 
   return (
     <div className="home-page">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="navbar-brand">TaskBoost</div>
-        <div className="navbar-links">
-          <a href="#" className="active">Início</a>
-          <a href="#">Funcionalidades</a>
-          <a href="#">Contato</a>
-        </div>
-      </nav>
-
+     
       {/* Hero */}
       <section className="hero">
         <div className="container">
@@ -94,14 +85,8 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* Rodapé */}
-      <footer>
-        <div className="container">
-          <p>&copy; 2025 TaskBoost. Todos os direitos reservados.</p>
-        </div>
-      </footer>
     </div>
+    
   );
 }
 

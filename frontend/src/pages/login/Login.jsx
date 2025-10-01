@@ -33,28 +33,6 @@ function Login() {
 
   return (
     <div className="login-page">
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div className="container">
-          <a className="navbar-brand fw-bold" href="#">TaskBoost</a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" href="#">Início</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Sobre</a></li>
-              <li className="nav-item"><a className="nav-link active" href="#">Login</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
       {/* Conteúdo */}
       <main>
         <div className="login-container">

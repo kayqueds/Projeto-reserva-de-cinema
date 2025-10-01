@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./cadastro.css";
 
 function Cadastro() {
@@ -21,28 +22,6 @@ function Cadastro() {
 
   return (
     <div className="cadastro-page">
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div className="container">
-          <a className="navbar-brand fw-bold" href="#">TaskBoost</a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" href="#">Início</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Sobre</a></li>
-              <li className="nav-item"><a className="nav-link active" href="#">Cadastro</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
       {/* Conteúdo */}
       <main>
         <div className="cadastro-container">
@@ -66,9 +45,9 @@ function Cadastro() {
               </button>
             </form>
 
-            <a href="/login" className="login-link">
+            <Link to="/login" className="link-login link">
               Já tem conta? Faça login
-            </a>
+            </Link>
           </div>
 
           {/* Lado direito com imagens dinâmicas */}

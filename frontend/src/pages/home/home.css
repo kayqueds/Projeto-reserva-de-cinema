@@ -172,13 +172,6 @@
   background: rgba(0,0,0,0.6);
 }
 
-/* ====== RODAPÉ ====== */
-.home-page footer {
-  text-align: center;
-  padding: 30px 0;
-  background-color: rgba(231, 226, 226, 0); /* mais transparente */
-  font-size: 0.9rem;
-}
 
 /* ====== RESPONSIVIDADE ====== */
 @media (max-width: 768px) {
