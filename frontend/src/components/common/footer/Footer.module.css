@@ -14,3 +14,20 @@ footer{
   background-color: #1a1a1a;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
+@media (max-width: 600px) {
+  .container {
+    font-size: 0.8rem;
+  }
+  footer{
+    padding: 0.8rem;
+  }   
+}
+@media (max-width: 400px) {
+  .container {
+    font-size: 0.7rem;
+  }
+  footer{
+    padding: 0.6rem;
+  }
+  
+}

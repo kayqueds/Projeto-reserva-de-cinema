@@ -10,16 +10,13 @@ function App() {
   const [showLoading, setShowLoading] = useState(true);
 
   const handleLoadingComplete = () => {
-    setShowLoading(false);
+    setShowLoading(true);
   };
 
   return (
     <>
       {showLoading && (
-        <Loading 
-          duration={3000} 
-          onLoadingComplete={handleLoadingComplete} 
-        />
+        <Loading duration={1500} onLoadingComplete={handleLoadingComplete} />
       )}
       <BrowserRouter>
         <div className="app">

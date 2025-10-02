@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./home.css";
+import Banner from "../../components/common/banner/Banner";
 
 function Home() {
   const funcionalidades = [
@@ -50,13 +51,12 @@ function Home() {
     <div className="home-page">
      
       {/* Hero */}
-      <section className="hero">
-        <div className="container">
-          <h1>Otimize sua rotina com o TaskBoost</h1>
-          <p>Organize, priorize e conclua suas tarefas com eficiência.</p>
-          <a href="#" className="btn-hero">Comece Agora</a>
-        </div>
-      </section>
+      <Banner 
+        titulo="Gerencie seu tempo com eficiência" 
+        descricao="TaskBoost é a ferramenta ideal para organizar tarefas, aumentar produtividade e alcançar seus objetivos."
+        botaoTexto="Começar Agora"
+        botaoLink="/cadastro"
+      />
 
       {/* Carrossel */}
       <section className="funcionalidade-carousel">

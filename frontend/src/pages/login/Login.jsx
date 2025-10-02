@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import Banner from "../../components/common/banner/Banner";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ function Login() {
 
   const [index, setIndex] = useState(0);
 
-   // Lista de imagens (pode trocar pelas suas)
+  // Lista de imagens (pode trocar pelas suas)
   const imagens = [
     "https://blogprodutivamente.files.wordpress.com/2022/07/post-como-fazer-lista-de-tarefas-2.jpg?w=1024",
     "https://isoflex.com.br/wp-content/uploads/2022/12/matriz-de-gerenciamento-do-tempo.jpg",
@@ -16,10 +17,10 @@ function Login() {
   ];
 
   useEffect(() => {
-    const intervalo = setInterval(() => {
+    const intervalo = setTimeout(() => {
       setIndex((prev) => (prev + 1) % imagens.length);
     }, 4000);
-    return () => clearInterval(intervalo);
+    return () => clearTimeout(intervalo);
   }, [imagens.length]);
 
   const enviarFormulario = (e) => {
@@ -62,11 +63,17 @@ function Login() {
                 <Link to="/cadastro">Cadastre-se</Link>
               </div>
 
-              <button type="submit" className="btn-login">Login</button>
+              <button type="submit" className="btn-login">
+                Login
+              </button>
 
               <div className="divider">ou</div>
 
-              <button type="button" className="btn-login-google" onClick={loginGoogle}>
+              <button
+                type="button"
+                className="btn-login-google"
+                onClick={loginGoogle}
+              >
                 Continuar com Google
               </button>
             </form>

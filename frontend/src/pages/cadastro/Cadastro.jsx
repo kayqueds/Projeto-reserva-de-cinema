@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./cadastro.css";
+import "./Cadastro.css";
+import Banner from "../../components/common/banner/Banner";
 
 function Cadastro() {
-  // Lista de imagens (pode trocar pelas suas)
+  // Lista de imagens
   const imagens = [
     "https://blogprodutivamente.files.wordpress.com/2022/07/post-como-fazer-lista-de-tarefas-2.jpg?w=1024",
     "https://isoflex.com.br/wp-content/uploads/2022/12/matriz-de-gerenciamento-do-tempo.jpg",
@@ -23,18 +24,40 @@ function Cadastro() {
   return (
     <div className="cadastro-page">
       {/* Conteúdo */}
+      <div className="banner-container">
+      </div>
       <main>
         <div className="cadastro-container">
           {/* Lado esquerdo */}
           <div className="cadastro-left">
             <h2>Crie sua conta</h2>
             <form>
-              <input type="text" className="form-control" placeholder="Nome completo" required />
-              <input type="email" className="form-control" placeholder="Email" required />
-              <input type="password" className="form-control" placeholder="Senha" required />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nome completo"
+                required
+              />
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Senha"
+                required
+              />
 
               <div className="form-check mb-3">
-                <input type="checkbox" className="form-check-input" id="termos" required />
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="termos"
+                  required
+                />
                 <label className="form-check-label" htmlFor="termos">
                   Aceito os termos de uso
                 </label>
