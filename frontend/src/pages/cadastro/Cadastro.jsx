@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import "./cadastro.css";
+import { Link } from "react-router-dom";
+import "./Cadastro.css";
+import Banner from "../../components/common/banner/Banner";
 
 function Cadastro() {
-  // Lista de imagens (pode trocar pelas suas)
+  // Lista de imagens
   const imagens = [
     "https://blogprodutivamente.files.wordpress.com/2022/07/post-como-fazer-lista-de-tarefas-2.jpg?w=1024",
     "https://isoflex.com.br/wp-content/uploads/2022/12/matriz-de-gerenciamento-do-tempo.jpg",
@@ -21,41 +23,41 @@ function Cadastro() {
 
   return (
     <div className="cadastro-page">
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div className="container">
-          <a className="navbar-brand fw-bold" href="#">TaskBoost</a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" href="#">Início</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Sobre</a></li>
-              <li className="nav-item"><a className="nav-link active" href="#">Cadastro</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
       {/* Conteúdo */}
+      <div className="banner-container">
+      </div>
       <main>
         <div className="cadastro-container">
           {/* Lado esquerdo */}
           <div className="cadastro-left">
             <h2>Crie sua conta</h2>
             <form>
-              <input type="text" className="form-control" placeholder="Nome completo" required />
-              <input type="email" className="form-control" placeholder="Email" required />
-              <input type="password" className="form-control" placeholder="Senha" required />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nome completo"
+                required
+              />
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Senha"
+                required
+              />
 
               <div className="form-check mb-3">
-                <input type="checkbox" className="form-check-input" id="termos" required />
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="termos"
+                  required
+                />
                 <label className="form-check-label" htmlFor="termos">
                   Aceito os termos de uso
                 </label>
@@ -66,9 +68,9 @@ function Cadastro() {
               </button>
             </form>
 
-            <a href="/login" className="login-link">
+            <Link to="/login" className="link-login link">
               Já tem conta? Faça login
-            </a>
+            </Link>
           </div>
 
           {/* Lado direito com imagens dinâmicas */}

@@ -1,77 +1,22 @@
 .cadastro-page {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
+  min-height: 100vh;
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgba(255, 255, 255, 0.87);
   background-color: #f8e6e600;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Links */
+
 .cadastro-page a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
-.cadastro-page a:hover {
-  color: #535bf2;
-}
 
-/* Layout */
-.cadastro-page body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+.cadastro-page a:hover { color: #535bf2; }
 
-/* Navbar */
-.cadastro-page .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background-color: #1a1a1a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  z-index: 1000;
-}
-
-.cadastro-page .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #646cff;
-  text-decoration: none;
-}
-
-.cadastro-page .navbar-nav {
-  display: flex;
-  gap: 1.2rem;
-}
-
-.cadastro-page .navbar-nav a {
-  color: #646cff;
-  font-weight: 500;
-  text-decoration: none;
-}
-.cadastro-page .navbar-nav a:hover {
-  color: #535bf2;
-}
-.cadastro-page .navbar-nav .active {
-  text-decoration: underline;
-}
-
-/* Conteúdo abaixo da navbar */
 .cadastro-page main {
   padding-top: 0px;
   display: flex;
@@ -79,7 +24,6 @@
   align-items: center;
 }
 
-/* Container do cadastro */
 .cadastro-container {
   display: flex;
   width: 900px;
@@ -90,7 +34,6 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Lado esquerdo: formulário */
 .cadastro-left {
   flex: 1;
   background: linear-gradient(to bottom right, #646cff, #535bf2);
@@ -107,7 +50,6 @@
   text-align: center;
 }
 
-/* Inputs */
 .form-control {
   width: 100%;
   border: 1px solid #ccc;
@@ -116,12 +58,8 @@
   margin-bottom: 1rem;
 }
 
-/* Checkbox */
-.form-check-label {
-  font-size: 0.9rem;
-}
+.form-check-label { font-size: 0.9rem; }
 
-/* Botão cadastrar */
 .btn-cadastrar {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -134,19 +72,24 @@
   transition: border-color 0.25s;
   width: 100%;
 }
-.btn-cadastrar:hover {
-  border-color: #646cff;
-}
 
-/* Link para login */
-.login-link {
+.btn-cadastrar:hover { border-color: #646cff; }
+
+.link-login {
   margin-top: 1rem;
   font-size: 0.9rem;
   text-align: center;
-  color: #ffffff;
+  text-transform: capitalize;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 0.4rem;
+}
+.link-login:hover {
+  background-color: #f0f0f0;
+  transition: 0.3s;
 }
 
-/* Lado direito: imagens com crossfade */
+
 .cadastro-right {
   position: relative;
   flex: 1;
@@ -164,9 +107,7 @@
   transition: opacity 1s ease-in-out;
 }
 
-.cadastro-right img.active {
-  opacity: 1;
-}
+.cadastro-right img.active { opacity: 1; }
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
@@ -175,11 +116,40 @@
     background-color: #ffffff;
   }
 
-  .cadastro-page .navbar {
-    background-color: #f8f9fa;
-  }
-
   .cadastro-left {
     color: #213547;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cadastro-page {
+    padding-top: 60px;
+    padding: 60px 1rem 1rem;
+  }
+  
+  .cadastro-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .cadastro-right {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cadastro-page {
+    padding-top: 50px;
+    padding: 50px 0.5rem 0.5rem;
+  }
+  
+  .cadastro-left {
+    padding: 1.5rem;
+  }
+  
+  .cadastro-left h2 {
+    font-size: 1.5rem;
   }
 }

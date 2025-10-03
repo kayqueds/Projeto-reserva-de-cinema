@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./home.css";
+import Banner from "../../components/common/banner/Banner";
 
 function Home() {
   const funcionalidades = [
@@ -48,24 +49,14 @@ function Home() {
 
   return (
     <div className="home-page">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="navbar-brand">TaskBoost</div>
-        <div className="navbar-links">
-          <a href="#" className="active">Início</a>
-          <a href="#">Funcionalidades</a>
-          <a href="#">Contato</a>
-        </div>
-      </nav>
-
+     
       {/* Hero */}
-      <section className="hero">
-        <div className="container">
-          <h1>Otimize sua rotina com o TaskBoost</h1>
-          <p>Organize, priorize e conclua suas tarefas com eficiência.</p>
-          <a href="#" className="btn-hero">Comece Agora</a>
-        </div>
-      </section>
+      <Banner 
+        titulo="Gerencie seu tempo com eficiência" 
+        descricao="TaskBoost é a ferramenta ideal para organizar tarefas, aumentar produtividade e alcançar seus objetivos."
+        botaoTexto="Começar Agora"
+        botaoLink="/cadastro"
+      />
 
       {/* Carrossel */}
       <section className="funcionalidade-carousel">
@@ -94,14 +85,8 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* Rodapé */}
-      <footer>
-        <div className="container">
-          <p>&copy; 2025 TaskBoost. Todos os direitos reservados.</p>
-        </div>
-      </footer>
     </div>
+    
   );
 }
 
