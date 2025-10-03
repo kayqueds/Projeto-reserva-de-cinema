@@ -5,7 +5,6 @@ import RotasSite from "./routes/RotasSite";
 import Navigation from "./components/common/Navigation/Navigation";
 import Loading from "./pages/loading/Loading";
 import Footer from "./components/common/footer/Footer";
-import Mensagem from "./components/common/mensagem/Mensagem";
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
@@ -24,7 +23,6 @@ function App() {
           <Navigation />
           <main className="main-content">
             <RotasSite />
-            <Mensagem />
           </main>
           <Footer />
         </div>
